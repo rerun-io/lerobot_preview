@@ -10,7 +10,7 @@
 # and `pixi run TASK` to run it (e.g. `pixi run example`).
 
 [project]
-name = "new_project_name"
+name = "lerobot_preview"
 authors = ["rerun.io <opensource@rerun.io>"]
 channels = ["conda-forge"]
 description = "new_project_name"
@@ -59,6 +59,10 @@ py-lint = "mypy --install-types --non-interactive --no-warn-unused-ignore"
 # General stuff:
 lint-typos = "typos"
 
+# ------------------------------------------------------------------------------------------
+# Project commands:
+lerobot_preview = "lerobot_preview"
+
 
 [dependencies]
 # C++ build-tools:
@@ -76,6 +80,9 @@ types-requests = ">=2.32,<3" # mypy type hint stubs for generate_changelog.py
 
 # General stuff:
 typos = ">=1.16.20"
+
+[pypi-dependencies]
+lerobot_preview = { path = ".", editable = true} # our own package, installed in editable mode
 
 [target.linux-64.dependencies]
 sysroot_linux-64 = ">=2.17,<3" # rustc 1.64+ requires glibc 2.17+, see https://blog.rust-lang.org/2022/08/01/Increasing-glibc-kernel-requirements.html

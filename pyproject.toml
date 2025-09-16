@@ -9,6 +9,18 @@ license = "MIT OR Apache-2.0"
 readme = "README.md"
 homepage = "https://rerun.io"
 repository = "https://github.com/rerun-io/lerobot_preview"
+requires-python = ">=3.10"
+
+
+scripts = { lerobot_preview = "lerobot_preview.__main__:main" }
+
+dependencies = [
+    # TODO update upon release
+    #"rerun-sdk==0.25.0",
+    "rerun-sdk @ file:///Users/nick/repos//rerun/rerun_py",
+    "google-cloud-storage",
+    "xxhash",
+]
 
 [build-system]
 requires = ["hatchling"]
@@ -17,6 +29,9 @@ build-backend = "hatchling.build"
 [tool.hatch.version]
 path = "lerobot_preview/__init__.py"
 variable = "__version__"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.ruff]
 # https://beta.ruff.rs/docs/configuration/
