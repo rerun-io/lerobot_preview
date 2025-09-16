@@ -1,5 +1,23 @@
 # Copied from https://github.com/rerun-io/rerun_template
 
+[project]
+name = "lerobot_preview"
+dynamic = ["version"]
+description = "View Cloud Hosted LeRobot Datasets with Rerun."
+authors = [{ name = "Rerun.io", email = "opensource@rerun.io" }]
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+homepage = "https://rerun.io"
+repository = "https://github.com/rerun-io/lerobot_preview"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "lerobot_preview/__init__.py"
+variable = "__version__"
+
 [tool.ruff]
 # https://beta.ruff.rs/docs/configuration/
 
