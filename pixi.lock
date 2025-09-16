@@ -104,9 +104,9 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/d9/b6/7f16b5f603faa17a6d0cbbdb39f5bceafa9e70e0ef921ef184781121efad/rerun_sdk-0.25.0-cp39-abi3-manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/11/a7/81dba5010f7e733de88af9555725146fc133be97ce36533867f4c7e75066/xxhash-3.5.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
-      - pypi: ../rerun/rerun_py
       - pypi: ./
       linux-aarch64:
       - conda: https://conda.anaconda.org/conda-forge/linux-aarch64/_openmp_mutex-4.5-2_gnu.tar.bz2
@@ -206,9 +206,9 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/40/e9/859379eedf4ea37da7dc0ca9bb8abd37637752058ddcae558c61bb019bec/rerun_sdk-0.25.0-cp39-abi3-manylinux_2_28_aarch64.whl
       - pypi: https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/c3/cc/762312960691da989c7cd0545cb120ba2a4148741c6ba458aa723c00a3f8/xxhash-3.5.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl
-      - pypi: ../rerun/rerun_py
       - pypi: ./
       osx-64:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/brotli-python-1.1.0-py312heafc425_1.conda
@@ -301,9 +301,9 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/ef/07/86d77a9e8b6665082a9152460c7816aca94e8e80061c316c51bf8164dda9/rerun_sdk-0.25.0-cp39-abi3-macosx_10_12_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/07/0e/1bfce2502c57d7e2e787600b31c83535af83746885aa1a5f153d8c8059d6/xxhash-3.5.0-cp312-cp312-macosx_10_9_x86_64.whl
-      - pypi: ../rerun/rerun_py
       - pypi: ./
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/brotli-python-1.1.0-py313h3579c5c_2.conda
@@ -398,9 +398,9 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/bd/12/900cfa5ef70b0d7173f0405f042f4b26b5c63e9e6d4c6f51d98314c72297/rerun_sdk-0.25.0-cp39-abi3-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fc/d8/b3627a0aebfbfa4c12a41e22af3742cf08c8ea84f5cc3367b5de2d039cce/xxhash-3.5.0-cp313-cp313-macosx_11_0_arm64.whl
-      - pypi: ../rerun/rerun_py
       - pypi: ./
       win-64:
       - conda: https://conda.anaconda.org/conda-forge/win-64/brotli-python-1.1.0-py313h5813708_2.conda
@@ -476,9 +476,9 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c8/f1/d6a797abb14f6283c0ddff96bbdd46937f64122b8c925cab503dd37f8214/pyasn1-0.6.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/1e/db/4254e3eabe8020b458f1a747140d32277ec7a271daf1d235b70dc0b4e6e3/requests-2.32.5-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/bd/70/da65f11cd535cc7c8c1fcd816f6d930019823ea0bc7e7cc6f20a446ef415/rerun_sdk-0.25.0-cp39-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/64/8d/0133e4eb4beed9e425d9a98ed6e081a55d195481b7632472be1af08d2f6b/rsa-4.9.1-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/96/14/8416dce965f35e3d24722cdf79361ae154fa23e2ab730e5323aa98d7919e/xxhash-3.5.0-cp313-cp313-win_amd64.whl
-      - pypi: ../rerun/rerun_py
       - pypi: ./
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -2148,10 +2148,10 @@ packages:
 - pypi: ./
   name: lerobot-preview
   version: 0.1.0
-  sha256: fd00911ad4255ca858216712d096d74e3aa8d4a62c9436dbfb464c9f9503bebe
+  sha256: 3ae0a6fc131c159070318e646134b50d26b38a72a0705c396818638fa05cc6f2
   requires_dist:
   - google-cloud-storage
-  - rerun-sdk @ file:///Users/nick/repos/rerun/rerun_py
+  - rerun-sdk==0.25.0
   - xxhash
   requires_python: '>=3.10'
   editable: true
@@ -4296,10 +4296,10 @@ packages:
   - pysocks>=1.5.6,!=1.5.7 ; extra == 'socks'
   - chardet>=3.0.2,<6 ; extra == 'use-chardet-on-py3'
   requires_python: '>=3.9'
-- pypi: ../rerun/rerun_py
+- pypi: https://files.pythonhosted.org/packages/40/e9/859379eedf4ea37da7dc0ca9bb8abd37637752058ddcae558c61bb019bec/rerun_sdk-0.25.0-cp39-abi3-manylinux_2_28_aarch64.whl
   name: rerun-sdk
-  version: 0.25.0a8+dev
-  sha256: fc470286fb026d8b2de181a679384469019b233e1f234e3665d02a9f157a7d5a
+  version: 0.25.0
+  sha256: cda864571d1bdf7154407f8e737257021d1502786349a100c3eec6f69c2f0429
   requires_dist:
   - attrs>=23.1.0
   - numpy>=2
@@ -4307,7 +4307,71 @@ packages:
   - pyarrow>=18.0.0
   - typing-extensions>=4.5
   - pytest==8.4.1 ; extra == 'tests'
-  - rerun-notebook==0.25.0a8+dev ; extra == 'notebook'
+  - rerun-notebook==0.25.0 ; extra == 'notebook'
+  - datafusion==48.0.0 ; extra == 'datafusion'
+  - rerun-sdk[notebook] ; extra == 'all'
+  - rerun-sdk[datafusion] ; extra == 'all'
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/bd/12/900cfa5ef70b0d7173f0405f042f4b26b5c63e9e6d4c6f51d98314c72297/rerun_sdk-0.25.0-cp39-abi3-macosx_11_0_arm64.whl
+  name: rerun-sdk
+  version: 0.25.0
+  sha256: a0acecc1797a27af5e345ba9d499ecbabb65dfd0b9e916edeb686cf4e9e8e1c2
+  requires_dist:
+  - attrs>=23.1.0
+  - numpy>=2
+  - pillow>=8.0.0
+  - pyarrow>=18.0.0
+  - typing-extensions>=4.5
+  - pytest==8.4.1 ; extra == 'tests'
+  - rerun-notebook==0.25.0 ; extra == 'notebook'
+  - datafusion==48.0.0 ; extra == 'datafusion'
+  - rerun-sdk[notebook] ; extra == 'all'
+  - rerun-sdk[datafusion] ; extra == 'all'
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/bd/70/da65f11cd535cc7c8c1fcd816f6d930019823ea0bc7e7cc6f20a446ef415/rerun_sdk-0.25.0-cp39-abi3-win_amd64.whl
+  name: rerun-sdk
+  version: 0.25.0
+  sha256: a52ac7e99e3f5a7bf72e93f104c105314863958ee8167d83f36cf9fa1717fd37
+  requires_dist:
+  - attrs>=23.1.0
+  - numpy>=2
+  - pillow>=8.0.0
+  - pyarrow>=18.0.0
+  - typing-extensions>=4.5
+  - pytest==8.4.1 ; extra == 'tests'
+  - rerun-notebook==0.25.0 ; extra == 'notebook'
+  - datafusion==48.0.0 ; extra == 'datafusion'
+  - rerun-sdk[notebook] ; extra == 'all'
+  - rerun-sdk[datafusion] ; extra == 'all'
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/d9/b6/7f16b5f603faa17a6d0cbbdb39f5bceafa9e70e0ef921ef184781121efad/rerun_sdk-0.25.0-cp39-abi3-manylinux_2_28_x86_64.whl
+  name: rerun-sdk
+  version: 0.25.0
+  sha256: 00d3f827c109fe0516529891123190b066e6fc1b0f4d6b89e9b776769ee95f80
+  requires_dist:
+  - attrs>=23.1.0
+  - numpy>=2
+  - pillow>=8.0.0
+  - pyarrow>=18.0.0
+  - typing-extensions>=4.5
+  - pytest==8.4.1 ; extra == 'tests'
+  - rerun-notebook==0.25.0 ; extra == 'notebook'
+  - datafusion==48.0.0 ; extra == 'datafusion'
+  - rerun-sdk[notebook] ; extra == 'all'
+  - rerun-sdk[datafusion] ; extra == 'all'
+  requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/ef/07/86d77a9e8b6665082a9152460c7816aca94e8e80061c316c51bf8164dda9/rerun_sdk-0.25.0-cp39-abi3-macosx_10_12_x86_64.whl
+  name: rerun-sdk
+  version: 0.25.0
+  sha256: dcb2a4fc8c487ee3be16eaccb9ae8b16677b333f3821ef641b82604e46f03ce8
+  requires_dist:
+  - attrs>=23.1.0
+  - numpy>=2
+  - pillow>=8.0.0
+  - pyarrow>=18.0.0
+  - typing-extensions>=4.5
+  - pytest==8.4.1 ; extra == 'tests'
+  - rerun-notebook==0.25.0 ; extra == 'notebook'
   - datafusion==48.0.0 ; extra == 'datafusion'
   - rerun-sdk[notebook] ; extra == 'all'
   - rerun-sdk[datafusion] ; extra == 'all'

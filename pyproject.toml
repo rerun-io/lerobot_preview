@@ -15,9 +15,7 @@ requires-python = ">=3.10"
 scripts = { lerobot_preview = "lerobot_preview.__main__:main" }
 
 dependencies = [
-    # TODO update upon release
-    #"rerun-sdk==0.25.0",
-    "rerun-sdk @ file:///Users/nick/repos//rerun/rerun_py",
+    "rerun-sdk==0.25.0",
     "google-cloud-storage",
     "xxhash",
 ]
