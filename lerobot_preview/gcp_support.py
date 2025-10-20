@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import json
 import shutil
+import time
 from pathlib import Path
 from typing import Any
 
+import tqdm
 import xxhash
 from google.cloud import storage
 
@@ -50,7 +52,7 @@ class GCPLeRobot:
             self._meta_cache.mkdir(parents=True, exist_ok=True)
             # Download metadata
             blobs = self._bucket.list_blobs(prefix=self._prefix / "meta")
-            for blob in blobs:
+            for blob in tqdm.tqdm(blobs, desc="Downloading metadata"):
                 blob.download_to_filename(self._meta_cache / Path(blob.name).name)
             shutil.move(self._meta_cache / "episodes.jsonl", self._meta_cache / "rerun_all_episodes.jsonl")
             (self._meta_cache / "episodes.jsonl").touch()
@@ -58,6 +60,7 @@ class GCPLeRobot:
             # Avoid listing chunk dirs every time
             # Need trailing slash to get subdir names
             iterator = self._bucket.list_blobs(prefix=str(Path(self._prefix) / "data") + "/", delimiter="/")
+            print("Caching data subdirectory information…")
             data_subdirectories = set()
             for page in iterator.pages:
                 if page.prefixes:
@@ -71,6 +74,7 @@ class GCPLeRobot:
                 prefix=str(Path(self._prefix) / "videos" / data_subdirs[0]) + "/",
                 delimiter="/",
             )
+            print("Caching video subdirectory information…")
             for page in iterator.pages:
                 if page.prefixes:
                     video_subdirectories.update(page.prefixes)
@@ -86,22 +90,23 @@ class GCPLeRobot:
 
     def get_contents(self, episode: str) -> None:
         """Downloads the data and video files for a given episode into the local cache."""
-        potential_subdirs = json.loads((self._meta_cache / "rerun_meta.json").read_text())
-        for subdir in potential_subdirs["subdirs"]:
-            episode_data_path = Path(self._prefix) / "data" / subdir / f"{episode}"
-            blobs = self._bucket.list_blobs(prefix=episode_data_path)
-            if not blobs:
-                continue
-            for blob in blobs:
-                dest = self._cache / "data" / subdir / Path(blob.name).name
-                self._maybe_download(blob, dest)
-            for video_subdir in potential_subdirs["video_subdirs"]:
-                episode_video_path = Path(self._prefix) / "videos" / subdir / video_subdir / f"{episode}"
-                blobs = self._bucket.list_blobs(prefix=episode_video_path)
-                for blob in blobs:
-                    dest = self._cache / "videos" / subdir / video_subdir / Path(blob.name).name
-                    self._maybe_download(blob, dest)
-            break  # Early exit because we found the episode
+        start = time.time()
+        episode_query = Path(self._prefix) / "data" / "**" / f"{episode}.parquet"
+        blobs = self._bucket.list_blobs(match_glob=episode_query)
+        print("Took", time.time() - start, "seconds to list parquets")
+        found_any = False
+        for blob in tqdm.tqdm(blobs, desc=f"Downloading data subdirectories for episode {episode}"):
+            found_any = True
+            dest = self._cache / Path(blob.name).relative_to(self._prefix)
+            self._maybe_download(blob, dest)
+        if not found_any:
+            raise ValueError(f"Episode {episode} not found at path {episode_query}")
+        start = time.time()
+        video_blobs = self._bucket.list_blobs(match_glob=Path(self._prefix) / "videos" / "**" / f"{episode}.mp4")
+        print("Took", time.time() - start, "seconds to list videos")
+        for video_blob in tqdm.tqdm(video_blobs, desc="Downloading videos"):
+            dest = self._cache / Path(video_blob.name).relative_to(self._prefix)
+            self._maybe_download(video_blob, dest)
         all_episodes = load_json_l(self._meta_cache / "rerun_all_episodes.jsonl")
         previous_episodes = load_json_l(self._meta_cache / "episodes.jsonl")
         selected_episodes = [ep for ep in all_episodes if ep["episode_index"] == index_from_name(episode)]
